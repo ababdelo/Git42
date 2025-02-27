@@ -19,7 +19,6 @@ Before using Git42, ensure you have:
 
 - **Bash Shell**: Available on Linux, macOS, or Git Bash for Windows.
 - **Git**: Confirm your installation with `git --version`.
-- 
 
 ## Installation
 
@@ -47,7 +46,7 @@ You will be prompted to enter:
 
 Once entered, this user’s information is saved, and you can switch to them without re-entering these details in the future.
 
-### Removing a 
+### Removing a User
 
 To delete a user profile, use the following command:
 
