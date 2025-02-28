@@ -102,30 +102,42 @@ Note: This feature is still in beta and currently only supports updating the dat
 
 ## Example Workflow
 
+### IMPORTANT:
+Git42 requires an active SSH agent with its environment variables (especially `SSH_AUTH_SOCK`) exported in your current shell. You only need to start the SSH agent once per shell session. Once running, you can use Git42 commands without restarting the agent. However, if you open a new shell, remember to start the SSH agent again by running:
+
+```bash
+eval $(ssh-agent -s)
+```
+
 1. Add two users:
+
    ```bash
     git42 add
     # Enter details for the first user
     git42 add
     # Enter details for the second user
    ```
+
 2. Switch between accounts:
+
    ```bash
+    eval $(ssh-agent -s)
     git42 setup user1
     # Work under the first account (e.g., clone a repository, make changes, commit, and push).
 
     git42 setup user2
     # Work under the second account (e.g., clone a repository, make changes, commit, and push).
-
    ```
+
 3. Remove a user:
+
    ```bash
    git42 rm user1
    ```
 
 ## Troubleshooting
 
-- **SSH key fails to add**: Ensure the SSH agent is running: `eval \$(ssh-agent -s)`.
+- **SSH key fails to add**: Ensure the SSH agent is running: `eval $(ssh-agent -s)`.
 - **Cannot find a user**: Run `git42 list` to check stored users.
 - **Git credentials incorrect**: Run `git config --global --list` to verify the applied settings.
 
