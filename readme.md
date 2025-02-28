@@ -1,17 +1,28 @@
-# Git42 - Effortlessly Manage Multiple Git Identities
+<h1 align="center">
+Git42 - Effortlessly Manage Multiple Git Identities
+</h1>
+
+<p align="center">
+  <img src="https://img.shields.io/github/last-commit/ababdelo/Git42?style=flat-square" /> &nbsp;&nbsp;
+  <img src="https://img.shields.io/github/commit-activity/m/ababdelo/Git42?style=flat-square" /> &nbsp;&nbsp;
+  <img src="https://img.shields.io/github/followers/ababdelo" /> &nbsp;&nbsp;
+  <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fababdelo%2FGit42&label=Repository%20Visits&countColor=%230c7ebe&style=flat&labelStyle=none"/> &nbsp;&nbsp;
+  <img src="https://img.shields.io/github/stars/ababdelo/Git42" /> &nbsp;&nbsp;
+  <img src="https://img.shields.io/github/contributors/ababdelo/Git42?style=flat-square" />
+</p>
 
 ## Overview
 
 Git42 is a powerful yet simple tool that helps developers manage multiple Git identities with ease. Designed for users who work across multiple GitHub accounts, Git42 automates the management of SSH keys and Git user configurations, allowing for seamless switching between different identities. Whether you are handling multiple projects with distinct GitHub profiles or managing various SSH keys, Git42 streamlines the process.
 
-## Features
+## ✨ Features
 
-- **One-Line Installation**: Quickly install Git42 with a single command.
-- **User Management**: Easily add, remove, edit, and list users from a central database.
-- **Multiple Profiles**: Store and manage multiple Git user profiles, each with its own SSH key.
-- **Seamless Switching**: Switch between GitHub accounts instantly using a single command.
-- **Automated SSH Key Handling**: Simplify authentication by automating SSH key management.
-- **Interactive CLI**: Enjoy an intuitive, user-friendly command-line interface for configuration and operations.
+- 🚀 **One-Line Installation**: Get started quickly with a single command.
+- 👥 **User Management**: Easily add, remove, edit, and list users from a central database.
+- 🔑 **Multiple Profiles**: Manage several Git user profiles, each with its own SSH key.
+- 🔄 **Seamless Switching**: Instantly switch between GitHub accounts with one command.
+- 🤖 **Automated SSH Key Handling**: Simplify authentication by automating SSH key management.
+- 💻 **Interactive CLI**: Enjoy an intuitive command-line interface for hassle-free configuration.
 
 ## Prerequisites
 
@@ -30,7 +41,7 @@ bash <(curl -fsSL https://raw.githubusercontent.com/ababdelo/Git42/main/install.
 
 ## Usage
 
-### Adding a New User
+### ➕ Adding a New User
 
 To add a new Git user profile, execute the following command:
 
@@ -46,7 +57,7 @@ You will be prompted to enter:
 
 Once entered, this user’s information is saved, and you can switch to them without re-entering these details in the future.
 
-### Removing a User
+### ❌ Removing a User
 
 To delete a user profile, use the following command:
 
@@ -56,7 +67,7 @@ git42 rm <user_id>
 
 This will permanently remove the specified user from the database.
 
-### Editing a User
+### ✏️ Editing a User
 
 To modify a user’s details, such as username, email, or SSH key, run:
 
@@ -64,7 +75,7 @@ To modify a user’s details, such as username, email, or SSH key, run:
 git42 edit <user_id>
 ```
 
-### Listing Users
+### 📑 Listing Users
 
 To view all registered users and their details, execute:
 
@@ -72,7 +83,7 @@ To view all registered users and their details, execute:
 git42 list
 ```
 
-### Switching to a User
+### 🔄️ Switching to a User
 
 To switch to a different user profile, use:
 
@@ -86,7 +97,7 @@ This command:
 2. Adds the selected user's SSH key to the SSH agent.
 3. Update the global Git configuration to reflect the chosen user’s details.
 
-### Updating Configuration
+### 🛠️ Updating Configuration
 
 To adjust Git42’s configuration settings, run:
 
@@ -102,14 +113,14 @@ Note: This feature is still in beta and currently only supports updating the dat
 
 ## Example Workflow
 
-### IMPORTANT:
+### ⚠️ IMPORTANT:
 Git42 requires an active SSH agent with its environment variables (especially `SSH_AUTH_SOCK`) exported in your current shell. You only need to start the SSH agent once per shell session. Once running, you can use Git42 commands without restarting the agent. However, if you open a new shell, remember to start the SSH agent again by running:
 
 ```bash
 eval $(ssh-agent -s)
 ```
 
-1. Add two users:
+1. **Add two users**:
 
    ```bash
     git42 add
@@ -118,7 +129,7 @@ eval $(ssh-agent -s)
     # Enter details for the second user
    ```
 
-2. Switch between accounts:
+2. **Switch between accounts**:
 
    ```bash
     eval $(ssh-agent -s)
@@ -129,7 +140,7 @@ eval $(ssh-agent -s)
     # Work under the second account (e.g., clone a repository, make changes, commit, and push).
    ```
 
-3. Remove a user:
+3. **Remove a user**:
 
    ```bash
    git42 rm user1
@@ -143,8 +154,21 @@ eval $(ssh-agent -s)
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
-## Author
+## 🤝 Contributing
 
-Developed by **ababdelo** 🚀. Contributions are welcome!
+Contributions and suggestions to enhance this project are welcome! Please feel free to submit a pull request or open an issue.
+
+##  ☎️ Contact
+
+For any inquiries or collaboration opportunities, please reach out to me at:
+
+<p align="center" style="display: inline;">
+    <a href="mailto:ababdelo.ed42@gmail.com"> <img src="https://img.shields.io/badge/Gmail-EA4335?style=flat&logo=gmail&logoColor=white"/></a>&nbsp;&nbsp;
+    <a href="https://www.linkedin.com/in/ababdelo"> <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white"/></a>&nbsp;&nbsp;
+    <a href="https://github.com/ababdelo"> <img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/></a>&nbsp;&nbsp;
+    <a href="https://www.instagram.com/edunwant42"> <img src="https://img.shields.io/badge/Instagram-E4405F?style=flat&logo=instagram&logoColor=white"/></a>&nbsp;&nbsp;
+</p>
+
+<p align="center">Thanks for stopping by and taking a peek at my work!</p>
