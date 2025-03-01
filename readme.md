@@ -97,7 +97,7 @@ This command:
 2. Adds the selected user's SSH key to the SSH agent.
 3. Update the global Git configuration to reflect the chosen user’s details.
 
-### 🟢 Displaying the Active User
+### 🟢 Displaying Active User
 
 To display the currently active Git user, use the following command:
 
