@@ -1,0 +1,28 @@
+# Ignore ignore folder and its content
+ignore/
+
+# Ignore OS-specific files
+.DS_Store                # macOS
+Thumbs.db                # Windows
+
+# Ignore IDE/editor files
+.vscode/
+.idea/
+
+# Ignore temporary files or caches
+*.swp
+*.swo
+
+# Ignore cache and temp files
+Temp/
+cache/
+tmp/
+
+# Ignore the users_db file
+*.db
+
+# Ignore the config file
+*.conf
+
+# Ignore Log files
+*.log
