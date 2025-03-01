@@ -97,6 +97,16 @@ This command:
 2. Adds the selected user's SSH key to the SSH agent.
 3. Update the global Git configuration to reflect the chosen user’s details.
 
+### 🟢 Displaying the Active User
+
+To display the currently active Git user, use the following command:
+
+```bash
+git42 active
+```
+
+This command will show the user that is currently set as the active Git user for your shell session, including their id and associated username. If no active user is configured, it will notify you that there is no active user.
+
 ### 🛠️ Updating Configuration
 
 To adjust Git42’s configuration settings, run:
@@ -111,40 +121,8 @@ You will be prompted to select an option from the available choices, such as:
 
 Note: This feature is still in beta and currently only supports updating the database location.
 
-## Example Workflow
-
-### ⚠️ IMPORTANT:
+## ⚠️ IMPORTANT TO KNOW:
 Git42 requires an active SSH agent with its environment variables (especially `SSH_AUTH_SOCK`) exported in your current shell. You only need to start the SSH agent once per shell session. Once running, you can use Git42 commands without restarting the agent. However, if you open a new shell, remember to start the SSH agent again by running:
-
-```bash
-eval $(ssh-agent -s)
-```
-
-1. **Add two users**:
-
-   ```bash
-    git42 add
-    # Enter details for the first user
-    git42 add
-    # Enter details for the second user
-   ```
-
-2. **Switch between accounts**:
-
-   ```bash
-    eval $(ssh-agent -s)
-    git42 setup user1
-    # Work under the first account (e.g., clone a repository, make changes, commit, and push).
-
-    git42 setup user2
-    # Work under the second account (e.g., clone a repository, make changes, commit, and push).
-   ```
-
-3. **Remove a user**:
-
-   ```bash
-   git42 rm user1
-   ```
 
 ## Troubleshooting
 
