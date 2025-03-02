@@ -2,6 +2,8 @@
 Git42 - Effortlessly Manage Multiple Git Identities
 </h1>
 
+![Git42](https://socialify.git.ci/ababdelo/Git42/image?font=Source+Code+Pro&language=1&name=1&owner=1&pattern=Circuit+Board&theme=Light)
+
 <p align="center">
   <img src="https://img.shields.io/github/last-commit/ababdelo/Git42?style=flat-square" /> &nbsp;&nbsp;
   <img src="https://img.shields.io/github/commit-activity/m/ababdelo/Git42?style=flat-square" /> &nbsp;&nbsp;
