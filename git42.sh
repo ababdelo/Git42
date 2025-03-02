@@ -144,14 +144,12 @@ add_user() {
 # If the user confirms, it removes the entry; otherwise, it cancels the operation.
 remove_user() {
   local USER_ID="$1"
-
-  # Check if the user exists in the database
-  if grep -q "^$USER_ID " "$USER_DB"; then
-    # Prompt for confirmation
+  # Updated regex pattern to match the table row format.
+  if grep -qE "^\|[[:space:]]*${USER_ID}[[:space:]]*\|" "$USER_DB"; then
     read -p "Are you sure you want to remove user $USER_ID? (y/n): " CONFIRMATION
     if [[ "$CONFIRMATION" =~ ^[Yy]$ ]]; then
-      # Remove the user entry from the database
-      sed -i "/^$USER_ID /d" "$USER_DB"
+      # Remove the matching line using the updated pattern.
+      sed -i -E "/^\|[[:space:]]*${USER_ID}[[:space:]]*\|/d" "$USER_DB"
       echo -e "${GREEN}Success: ${WHITE}User $USER_ID removed successfully.${RESET}"
     else
       echo -e "${YELLOW}Cancelled: ${WHITE}User removal aborted.${RESET}"
@@ -242,7 +240,7 @@ setup_user() {
   # Update Git's global configuration.
   git config --global user.name "$USERNAME"
   git config --global user.email "$EMAIL"
-  echo -e "${GREEN}Success: ${WHITE}Successfully set up user $USER_ID ($USERNAME) with the appropriate SSH key.${RESET}"
+  echo -e "${GREEN}Success:${WHITE} Git has been successfully configured for user ${USERNAME} (${USER_ID}), with the corresponding SSH key set up.${RESET}"
 }
 
 # Function to configure settings.
@@ -326,7 +324,7 @@ list_users() {
     username=$(echo "$username" | xargs)
     
     # Output the simplified format: "userID Identified as username"
-    echo -e "- ${BLUE}$user ${WHITE}Identified as ${GREEN}$username"
+    echo -e "- ${BLUE}$user ${WHITE}Identified as ${GREEN}$username${RESET}"
   done
 }
 
@@ -409,12 +407,7 @@ case $1 in
       echo -e "${RED}Error: ${WHITE}Missing user ID. To know the usage, use the help command.${RESET}"
       exit 1
     fi
-    read -p "Are you sure you want to remove user $USER_ID? (y/n): " CONFIRM
-    if [[ "$CONFIRM" =~ ^[Yy]$ ]]; then
-      remove_user "$USER_ID"
-    else
-      echo -e "${YELLOW}Cancelled: ${WHITE}User removal aborted.${RESET}"
-    fi
+    remove_user "$USER_ID"
     ;;
   edit)
     shift
