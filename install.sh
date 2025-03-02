@@ -61,7 +61,7 @@ spinner_updater() {
 
 # Main Script Logic
 INSTALL_DIR="$HOME/.git42"
-REPO_URL="https://github.com/edunwant42/Git42.git"
+REPO_URL="https://github.com/ababdelo/Git42.git"
 ALIAS_CMD='alias git42="$HOME/.git42/git42.sh"'
 PROFILE_FILES=("$HOME/.bashrc" "$HOME/.zshrc" "$HOME/.profile")
 
